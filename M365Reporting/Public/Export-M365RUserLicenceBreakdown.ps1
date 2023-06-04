@@ -81,9 +81,7 @@ function Export-M365RUserLicenceBreakdown {
 
         This example shows how to run the script interactively for the Company Contoso and does not give friendly names for SKUs
     #>
-    [Alias("Export-M365RUserLicenseBreakdown")]
-    [Alias("Export-M365RMSOLUserLicenceBreakdown")]
-    [Alias("Export-M365RMSOLUserLicenseBreakdown")]
+    [Alias("Export-M365RUserLicenseBreakdown", "Export-M365RMSOLUserLicenceBreakdown", "Export-M365RMSOLUserLicenseBreakdown")]
     [CmdletBinding(DefaultParameterSetName = 'DefaultParameters')]
     [OutputType([String])]
     param (
@@ -481,7 +479,7 @@ function Export-M365RUserLicenceBreakdown {
         $output = @($licensedUsers | Select-Object DisplayName, UserPrincipalName, AccountEnabled, DirectorySynced, AccountSKU, DirectAssigned, GroupsAssigning, * -ErrorAction SilentlyContinue)
         if ($output.count -gt 0)
         {
-            $output | Export-Excel -Path $XLOutput -WorksheetName $RootLicence -FreezeTopRowFirstColumn -AutoSize -AutoFilter
+            $output | Export-Excel -Path $XLOutput -WorksheetName (Get-TabName -LicenceName $RootLicence) -FreezeTopRowFirstColumn -AutoSize -AutoFilter
         }
     }
     Write-Information 'Formatting Excel Workbook'
@@ -499,9 +497,10 @@ function Export-M365RUserLicenceBreakdown {
 
             foreach ($cell in $worksheet.SelectedRange)
             {
-                if ($excel.Workbook.Worksheets | Where-Object { $_.name -eq $cell.Value })
+                $tabName = Get-TabName -LicenceName $($cell.Value)
+                if ($excel.Workbook.Worksheets | Where-Object { $_.name -eq $tabName })
                 {
-                    $referenceAddress = "`'$($cell.Value)`'!A1"
+                    $referenceAddress = "`'$($tabName)`'!A1"
                     $display = $($cell.Value)
                     $hyperlink = New-Object -TypeName OfficeOpenXml.ExcelHyperLink -ArgumentList $referenceAddress, $display
                     $cell.Hyperlink = $hyperlink
