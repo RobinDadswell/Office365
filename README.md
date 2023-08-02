@@ -5,32 +5,17 @@ All scripts within this repo are offered as-is without warranty or support.
 
 ## M365Reporting Module
 
-[![Publish PowerShell Module](https://github.com/JustinBarker77/Office365/actions/workflows/Publish-To-PowerShell-Gallery.yml/badge.svg)](https://github.com/JustinBarker77/Office365/actions/workflows/Publish-To-PowerShell-Gallery.yml) [![PowerShell Script Analyzer](https://github.com/JustinBarker77/Office365/actions/workflows/PSScriptAnalyzer.yml/badge.svg)](https://github.com/JustinBarker77/Office365/actions/workflows/PSScriptAnalyzer.yml)
+[![Publish PowerShell Module](https://github.com/RobinDadswell/Office365/actions/workflows/Publish-To-PowerShell-Gallery.yml/badge.svg)](https://github.com/RobinDadswell/Office365/actions/workflows/Publish-To-PowerShell-Gallery.yml) [![PowerShell Script Analyzer](https://github.com/RobinDadswell/Office365/actions/workflows/PSScriptAnalyzer.yml/badge.svg)](https://github.com/RobinDadswell/Office365/actions/workflows/PSScriptAnalyzer.yml)
 
 This module contains the following cmdlets:
-- Export-M365UserLicence-FullBreakdown
+- Export-M365UserLicenceFullBreakdown
 - Export-MailboxSizes
-- Export-MSOLUserLicence-FullBreakdown
 - Export-OneDriveUsageReport 
 - Get-MailboxSizes
 - Get-OneDriveUsageReport
 
-### Get-MSOLUserLicence-FullBreakdown
-This PowerShell script is compatible with Windows PowerShell 5 & 5.1 but will not work on newer versions of PowerShell. This script pulls back all License SKU's in a Microsoft 365 Tenancy and then reports on a per SKU basis as to which components are assigned to which users in a color coded Excel Workbook in a Friendly manner which where possible (Excel Tab naming limits being the main limiting factor) translates the name to the name within the M365 admin portal. This script is retained for those cases where an enterprise application cannot be added to Azure AD (See [the issue logged here](https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/684) for more information.)
-
-The original base scripts used to initially create from are referenced in the script itself. Co-authors for creating the updated script include [Mark Lofthouse](https://github.com/MarkLofthouse) and [Robin Dadswell](https://github.com/RobinDadswell).
-
-This requires the following module(s) installed:
-* ImportExcel (Minimum Version 7.1.2)
-* MSOnline (Minimum Version 1.1.183.57)
-
-This can be installed with the following command: 
-```powershell
-Install-Module ImportExcel, MSOnline
-```
-
 ## Export-M365UserLicenceBreakdown.ps1
-This PowerShell script is compatible with Windows PowerShell 5 and all newer versions of PowerShell. This script pulls back all License SKU's in a Microsoft 365 Tenancy and then reports on a per SKU basis as to which components are assigned to which users in a color coded Excel Workbook in a Friendly manner which where possible (Excel Tab naming limits being the main limiting factor) translates the name to the name within the M365 admin portal. 
+This PowerShell script is compatible with PowerShell 7 onwards. This script pulls back all License SKU's in a Microsoft 365 Tenancy and then reports on a per SKU basis as to which components are assigned to which users in a color coded Excel Workbook in a Friendly manner which where possible (Excel Tab naming limits being the main limiting factor) translates the name to the name within the M365 admin portal. 
 
 This requires the following module(s) installed: 
 * ImportExcel (Minimum Version 7.1.2)
@@ -46,6 +31,8 @@ Install-Module ImportExcel, Microsoft.Graph.Authentication, Microsoft.Graph.Iden
 ```
 
 Special thanks to [Doug Finke](https://github.com/dfinke) for the work on [ImportExcel](https://github.com/dfinke/ImportExcel).
+
+Co-authors for creating the updated script include [Mark Lofthouse](https://github.com/MarkLofthouse), [Justin Barker](https://github.com/JustinBarker77), [Luke Allinson](https://github.com/LukeAllinson) [Robin Dadswell](https://github.com/RobinDadswell).
 
 #### OS Support
 This script has been tested on the following platforms (all with PowerShell 7.1.3 unless otherwise stated):
