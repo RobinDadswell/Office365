@@ -19,10 +19,10 @@ This PowerShell script is compatible with PowerShell 7 onwards. This script pull
 
 This requires the following module(s) installed: 
 * ImportExcel (Minimum Version 7.1.2)
-* Microsoft.Graph.Authentication (Minimum Version 1.5.0)
-* Microsoft.Graph.Identity.DirectoryManagement (Minimum Version 1.5.0)
-* Microsoft.Graph.Groups (Minimum Version 1.5.0)
-* Microsoft.Graph.Users (Minimum Version 1.5.0)
+* Microsoft.Graph.Authentication (Minimum Version 2.16.0)
+* Microsoft.Graph.Identity.DirectoryManagement (Minimum Version 2.16.0)
+* Microsoft.Graph.Groups (Minimum Version 2.16.0)
+* Microsoft.Graph.Users (Minimum Version 2.16.0)
 
 These can be installed with the following command: 
 
