@@ -1,5 +1,4 @@
-﻿#Requires -Version 5 -Modules ExchangeOnlineManagement, ImportExcel
-function Export-M365RMailboxSizes
+﻿function Export-M365RMailboxSizes
 {
     <#
         .SYNOPSIS

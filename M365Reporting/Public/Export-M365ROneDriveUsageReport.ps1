@@ -1,4 +1,3 @@
-#requires -Version 5.1 -Modules ImportExcel
 function Export-M365ROneDriveUsageReport
 {
     <#
@@ -53,6 +52,9 @@ function Export-M365ROneDriveUsageReport
         [Alias('Tenant', 'M365Name', 'M365TenantName')]
         [string]
         $TenantName,
+        [Parameter(Mandatory)]
+        [string]
+        $ClientId,
         [Parameter()]
         [Alias('Device', 'DeviceAuthentication')]
         [switch]
@@ -86,9 +88,8 @@ function Export-M365ROneDriveUsageReport
         $paramOneDriveUsageReport['DeviceLogin'] = $true
     }
 
-    $report = Get-M365ROneDriveUsageReport -TenantName $TenantName
+    $report = Get-M365ROneDriveUsageReport -TenantName $TenantName -ClientId $ClientId
 
-    $report
     $outputFile = $OutputPath.FullName.TrimEnd([System.IO.Path]::DirectorySeparatorChar) + [System.IO.Path]::DirectorySeparatorChar + (Get-Date -Format yyyyMMdd_HHmmss) + '-' + $TenantName + '-' + 'OneDriveUsageReport.xlsx'
 
     if ($report.Count -ge 1)

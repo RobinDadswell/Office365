@@ -46,6 +46,9 @@ function Get-M365ROneDriveUsageReport
         [Alias('Tenant', 'M365Name', 'M365TenantName')]
         [string]
         $TenantName,
+        [Parameter(Mandatory)]
+        [string]
+        $ClientId,
         [Parameter()]
         [Alias('Device', 'DeviceAuthentication')]
         [switch]
@@ -67,6 +70,7 @@ function Get-M365ROneDriveUsageReport
             URL = $AdminURL
             ErrorAction    = 'Stop'
             Interactive    = $true
+            ClientId = $ClientId
         }
 
         if ($DeviceLogin)

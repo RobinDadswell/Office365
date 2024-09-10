@@ -1,4 +1,3 @@
-#Requires -Modules @{ ModuleName = "ImportExcel"; ModuleVersion = "7.1.2"}, @{ ModuleName = "Microsoft.Graph.Authentication"; ModuleVersion = "2.16.0"}, @{ ModuleName = "Microsoft.Graph.Identity.DirectoryManagement"; ModuleVersion = "2.16.0" }, @{ ModuleName = "Microsoft.Graph.Groups"; ModuleVersion = "2.16.0" }, @{ ModuleName = "Microsoft.Graph.Users"; ModuleVersion = "2.16.0" }
 function Export-M365RUserLicenceBreakdown {
     <#
         .SYNOPSIS
