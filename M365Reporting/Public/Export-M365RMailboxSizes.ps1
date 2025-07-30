@@ -226,7 +226,7 @@
                 'TotalSize(MB)'           = "=SUMIF(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[TotalItemSize(MB)])"
                 'AverageSize(MB)'         = "=IF(C$t<>0,(AVERAGEIF(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[TotalItemSize(MB)])),0)"
                 'TotalItemCount'          = "=SUMIF(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[ItemCount])"
-                'AverageItemCount'        = "=IF(E$t<>0,(AVERAGEIF(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[TotalItemSize(MB)])),0)"
+                'AverageItemCount'        = "=IF(E$t<>0,(AVERAGEIF(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[ItemCount])),0)"
                 'ArchiveCount'            = "=COUNTIFS(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[ArchiveStatus],""Active"")"
                 'ArchiveTotalSize(MB)'    = "=SUMIF(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[Archive_TotalItemSize(MB)])"
                 'ArchiveAverageSize(MB)'  = "=IF(H$t<>0,(AVERAGEIF(MailboxStats[RecipientTypeDetails],A$t,MailboxStats[Archive_TotalItemSize(MB)])),0)"
