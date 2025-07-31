@@ -10,7 +10,8 @@
             This script connects to EXO and then outputs Mailbox statistics to a CSV file.
 
         .NOTES
-            Version: 0.12
+            Version: 0.13
+            Updated: 31-07-2025 v0.13   Updates SummaryStats object; AverageItemCount was referencing TotalItemSize(MB) incorrectly
             Updated: 03-03-2022 v0.12   Replaced Export-Csv with Export-Excel (from ImportExcel Module) and added Summary page
             Updated: 01-03-2022 v0.11   Updated to an export command that calls the get command
             Updated: 01-03-2022 v0.10   Included a paramter to use an input CSV file
